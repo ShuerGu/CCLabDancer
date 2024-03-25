@@ -56,7 +56,6 @@ class ElizabethDancer {
     //rotate
     
     this.deg=map(sin(frameCount*0.1), -1, 1, -20, 20)
-    //this.brainY=map(sin(frameCount*0.01), -1, 1, -30, 30)
   }
   display() {
     // the push and pop, along with the translate 
