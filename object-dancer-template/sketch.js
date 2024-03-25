@@ -41,21 +41,22 @@ class ElizabethDancer {
     //..
     //..
     this.fillColor = 0;
-    this.jump = true;
-    this.deg = 30;
   }
   update() {
     // update properties here to achieve
     // your dancer's desired moves and behaviour
+    //petals' color
       this.fillColor += 3;
     if (this.fillColor > 255){
       this.fillColor = 0;
     }
+    //scale
     this.s=map(sin(frameCount*0.3), -1, 1, 0.6, 1)
     this.s2=map(sin(frameCount*0.3), -1, 1, 0.8, 1)
-    // if(this.s2 == 0.8){
-    //     this.deg = -this.deg
-    //   }
+    //rotate
+    
+    this.deg=map(sin(frameCount*0.1), -1, 1, -20, 20)
+    //this.brainY=map(sin(frameCount*0.01), -1, 1, -30, 30)
   }
   display() {
     // the push and pop, along with the translate 
@@ -100,7 +101,7 @@ class ElizabethDancer {
       scale(this.s2)
       
       fill(this.fillColor, 120, 60);
-      //rotate(radians(deg));
+      rotate(radians(this.deg));
       //head
       circle(0, -50, 20);
       circle(-15, -45, 20);
