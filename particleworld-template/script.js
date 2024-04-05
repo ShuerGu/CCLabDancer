@@ -27,8 +27,6 @@ function draw() {
     }
   }
 
-  
-
   // update and display
   for (let i = 0; i < particles.length; i++) {
     let p = particles[i];
@@ -40,7 +38,7 @@ function draw() {
 class Particle {
   // constructor function
   constructor(startX, startY) {
-    // properties: particle's characteristics
+    // properties: particle's characteristics 
     this.x = startX;
     this.y = startY;
     this.dia = random(1, 5);
