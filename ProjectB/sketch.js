@@ -126,7 +126,7 @@ function setup() {
     suitcaseObjects.push(new Suitcase(plusPos[i][0], plusPos[i][1], i+1))
     
   }
-  //console.log(suitcaseObjects)
+  
 }
 
 function draw() {
@@ -159,23 +159,8 @@ function draw() {
     line(100, height - 80, width, height - 80);
 
     drawShelf();
-    // firstSuitcase.update();
-    // firstSuitcase.displayExterior();
-    // loop over suitcases and draw all their exteriors
-    
-      // else {
-      //   image(img2, plusPos[i][0], plusPos[i][1], 100, 100);
-      // }
-    // }
-
-    //
     drawMan();
-    // openSuitcase();
-
-    // textFont("Times New Roman");
-    // fill(0);
-    // textSize(8);
-    // text("24-3-2024", 85, 185);
+    
   } else if (sceneIndex == 2) {
     background(161, 102, 47);
 
@@ -189,7 +174,7 @@ function draw() {
     
     drawEmojiArea();
   } else if (sceneIndex == 3) {
-   // console.log("savemojis");
+  
     background(161, 102, 47);
     drawBg();
     drawEmojiArea();
@@ -348,7 +333,6 @@ function checkIfEnter() {
     if (dist(mouseX, mouseY, plusPos[i][0], plusPos[i][1]) < 10) {
       generateNew();
       lastClickedSuitcaseIndex = suitcaseObjects[i+1].idxInSuitcaseArray;
-      console.log("last updated suitcaseIndex:",lastClickedSuitcaseIndex);
       sceneIndex = 2;
       clickIndex = i+1;
     }
@@ -386,7 +370,10 @@ function mousePressed() {
         suitcaseObjects[clickIndex].date = `${day}-${month}-${year}`;
 
 
-        // for (let i = emojis.length-1; i >= 0 ; i--) {
+  
+
+
+    
           for (let i = 0; i < emojis.length ; i++) {
           if (
             !(
@@ -415,12 +402,12 @@ function mousePressed() {
             
             emojis.splice(i, 1);
             i--;
-            // console.log(suitcaseObjects);
+            
           } else {
     
             suitcaseObjects[lastClickedSuitcaseIndex].savedEmojis.push(emojis[i])
             console.log(suitcaseObjects[lastClickedSuitcaseIndex]);
-            // suitcaseObjects.savedEmojis = emojis;
+            
           }
         }
         // if(saveCount < 5){
